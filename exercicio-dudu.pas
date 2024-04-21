@@ -13,6 +13,7 @@ var idade : integer;
 var sobrenome: string;
 var pergunta: string;
 var numero: integer;
+var SimOuNao: string;
 Begin
 //	nome := 'DuduBocechaces';
 //	idade := 8;
@@ -23,26 +24,36 @@ Begin
   Write('Qual é o seu sobrenome: ');
   readln(sobrenome);
 	
-	Write( 'Ok ' + nome + ' . Quantos anos você tem? ');
+	Writeln( 'Ok ' + nome + ' !');
+	write(' Quantos anos você tem? ');
 	readln(idade);
+	Writeln('');
 	
 	if ( idade < 18 ) then // SE () ENTÃO
-		begin 
-				writeln('Eu ainda sou menor de idade');
+		begin                     
+				Writeln('');
+				writeln('Você ainda é menor de idade.');
 				Writeln('Chame seus pais para acompanhar você no programa! Vamos aguardar');
+				Writeln('');
 		end
 	else  // SE NÃO
-		writeln('Eu já sou maior de idade');
+		writeln(' Você já é maior de idade ');
 			
 	Write( 'Oi meu nome é ' + nome + ' ' + sobrenome + '. Eu tenho ');
 	Write( idade );
 	Writeln( ' anos' );
-	Writeln( ' Vamos aprender se o número é par ou ímpar? ' );
-	Read( numero );
-	 if (numero mod 2 = 0) then
-    Writeln(numero, ' é um número par.')
-  else
-    Writeln(numero, ' é um número ímpar.');	
+	Writeln( 'Vamos aprender se o número é par ou ímpar? (S/N)' );
+	Readln( SimOuNao );     
+	// FAZER UM IF VERIFICANDO SE A RESPOSTA É S OU N
+	if ( SimOuNao = 'S' ) THEN
+		begin
+			Write( 'Ok, se você quer, fale o número que eu adivinho: ' );
+			Read( numero );
+	 		if (numero mod 2 = 0) then
+    		Writeln(numero, ' é um número par.')
+		  else
+    		Writeln(numero, ' é um número ímpar.');	
+    end;
 
 
 	Writeln( 'Tenha um ótimo dia, ' + nome +  ' ' + sobrenome);
